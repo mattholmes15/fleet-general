@@ -13,15 +13,14 @@ spec:
   - hosts:
     - dev.m1r5h.xyz
     secretName: m1r5h-tls
-  secretName: 
-    rules:
-    - host: dev.m1r5h.xyz
-      http:
-        paths:
-        - pathType: Prefix
-          path: "/"
-          backend:
-            service:
-              name: podinfo
-              port: 
-                number: 9898
+  rules:
+  - host: dev.m1r5h.xyz
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: podinfo
+            port: 
+              number: 9898
