@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mh-do-ingress
+  namespace: default # Same as app
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  labels:
+    name: mh-do-ingress
+spec:
+  tls:
+  - hosts:
+    - dev.m1r5h.xyz
+    secretName: m1r5h-tls
+  secretName: 
+  rules:
+  - host: dev.m1r5h.xyz
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: podinfo
+            port: 
+              number: 9898
