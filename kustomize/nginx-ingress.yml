@@ -13,6 +13,7 @@ spec:
   - hosts:
     - dev.m1r5h.xyz
     secretName: m1r5h-tls
+  secretName: 
   rules:
   - host: dev.m1r5h.xyz
     http:
