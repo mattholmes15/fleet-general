@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: color-game
+  namespace: default
   labels:
     app: web
 spec:
