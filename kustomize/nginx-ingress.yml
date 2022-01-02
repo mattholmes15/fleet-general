@@ -25,7 +25,7 @@ spec:
             name: podinfo
             port: 
               number: 9898
-      - pathType: Exact
+      - pathType: Prefix
         path: "/color"
         backend:
           service:
