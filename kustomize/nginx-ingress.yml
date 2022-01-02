@@ -24,3 +24,10 @@ spec:
             name: podinfo
             port: 
               number: 9898
+      - pathType: Exact
+        path: "/color"
+        backend:
+          service:
+            name: color-game
+            port: 
+              number: 80
