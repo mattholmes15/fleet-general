@@ -32,10 +32,3 @@ spec:
             name: color-game
             port: 
               number: 80
-      - pathType: Prefix
-        path: "/wordpress"
-        backend:
-          service:
-            name: dev-wordpress
-            port: 
-              number: 80
