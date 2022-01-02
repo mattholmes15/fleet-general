@@ -18,7 +18,7 @@ spec:
         app: web
     spec:
       containers:
-      - image: mrh44/colorgame:v2 
+      - image: mrh44/colorgame:2.1
         name: web
         ports:
         - containerPort: 80
