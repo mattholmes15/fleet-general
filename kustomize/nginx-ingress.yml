@@ -6,6 +6,7 @@ metadata:
   annotations: 
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.org/rewrites: "serviceName=color-game rewrite=/;"
   labels:
     name: mh-do-ingress
 spec:
