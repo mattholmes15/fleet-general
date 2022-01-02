@@ -13,6 +13,7 @@ spec:
   tls:
   - hosts:
     - dev.m1r5h.xyz
+    - test.m1r5h.xyz
     secretName: m1r5h-tls
   rules:
   - host: dev.m1r5h.xyz
@@ -32,3 +33,14 @@ spec:
             name: color-game
             port: 
               number: 80
+  - host: test.m1r5h.xyz
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: podinfo
+            port: 
+              number: 9898
+    
