@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: color-game
-  namespace: default
+  namespace: dev
   labels:
     customer: acg
 spec:

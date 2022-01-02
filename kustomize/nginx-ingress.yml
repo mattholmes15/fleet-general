@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mh-do-ingress
-  namespace: default # Same as app
+  namespace: dev # Same as app
   annotations: 
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
@@ -13,7 +13,6 @@ spec:
   tls:
   - hosts:
     - dev.m1r5h.xyz
-    - test.m1r5h.xyz
     secretName: m1r5h-tls
   rules:
   - host: dev.m1r5h.xyz
@@ -33,14 +32,3 @@ spec:
             name: color-game
             port: 
               number: 80
-  - host: test.m1r5h.xyz
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: podinfo
-            port: 
-              number: 9898
-    
